@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankle Circles</title>
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>🔥 Warm-Up Exercise</h1>
+
+    <button onclick="location.href='warm.html'" style="padding:10px 20px;" class="button">🔙 Back to Home</button>
+
+    <div class="card">
+        <h2><b>Ankle Circles</b></h2>
+        <img class="card-image" src="ankle.jpg" alt="follow">
+
+        <button class="start-button"
+            onclick="showToast('Start  now! Set your timer for 1 minute.Start the timmer Down.Thank You😊') "
+            class="btn btn-danger m-3">▶
+            Start
+            Exercise </button>
+        <h3><b><u>Steps:</u></b></h3>
+        <ol style="text-align: left; font-size: 18px; line-height: 1.8; color: #444;">
+
+            <li>Stand near a wall or chair if needed for balance.</li>
+
+            <li>Lift one foot slightly off the ground.</li>
+
+            <li>Rotate the ankle in slow, full circles. </li>
+
+            <li>Do this for 30 seconds, then switch to the other foot.</li>
+            <li>You can do this seated if standing is hard.</li>
+
+        </ol>
+        <audio controls>
+            <source src="1min.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <h3><b><u>Purpose</u></b></h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>⭐ Warms up ankle joints.</li>
+            <li>⭐ Reduces risk of twisting ankles during jumping/cardio.</li>
+            <li>⭐ Increases mobility before exercise.</li>
+        </ul>
+
+        <button class="start-button" onclick="nextExercise()">▶Well Done!Go To Main Page</button>
+        <h3><b><u>Tips</u></b></h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>Make full, slow circles—don’t rush.</li>
+            <li>Point your toes gently as you rotate.</li>
+
+        </ul>
+
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="myToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showToast(message) {
+            const toastElement = document.getElementById('myToast');
+            toastElement.querySelector('.toast-body').textContent = message;
+
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        }
+        function nextExercise() {
+            showToast("Keep It Up!🎉🎊");
+
+            const audio = new Audio(".mp3");
+            audio.play();
+
+            setTimeout(function () {
+                window.location.href = "warm.html";
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

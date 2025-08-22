@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forward Bend</title>
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>❄️ Cool-Down Exercise</h1>
+
+    <button onclick="location.href='cool.html'" style="padding:10px 20px;" class="button">🔙 Back to Home</button>
+
+    <div class="card">
+        <h2><b>Forward Bend</b></h2>
+        <img class="card-image" src="forwardbend.jpg" alt="forward bend">
+        <button class="start-button"
+            onclick="showToast('Start now! Set your timer for 30 seconds.Start the timmer Down.Thank You😊') "
+            class="btn btn-danger m-3">▶
+            Start
+            Exercise </button>
+        <h3><b><u>Steps:</u></b></h3>
+        <ol style="text-align: left; font-size: 18px; line-height: 1.8; color: #444;">
+            <li>Stand up tall with feet hip-width apart.</li>
+            <li>Inhale deeply, then exhale slowly as you bend forward from your hips.
+
+            </li>
+            <li>Let your arms hang down toward your toes (you can slightly bend your knees if needed).
+
+            </li>
+            <li>Keep your head and neck relaxed, hanging down naturally.
+
+            </li>
+            <li>Feel the stretch in your back, hamstrings, and calves.
+
+            </li>
+        </ol>
+        <audio controls>
+            <source src="30sec.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <h3><b><u>Benefits:</u></b></h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>⭐ Relieves tension in the spine and legs, improves flexibility, and calms the nervous system.</li>
+
+        </ul>
+        <button class="start-button" onclick="nextExercise()">▶ Next Exercise➡️ </button>
+
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="myToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showToast(message) {
+            const toastElement = document.getElementById('myToast');
+            toastElement.querySelector('.toast-body').textContent = message;
+
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        }
+        function nextExercise() {
+            showToast("Well Done✅ Great Job! Now moving to the next exercise.In next 5 Seconds😊");
+
+            const audio = new Audio(".mp3");
+            audio.play();
+
+            setTimeout(function () {
+                window.location.href = "catcow.html";
+            }, 5000);
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+html {
+    font-family: Poppins, sans-serif;
+    color: rgb(0, 255, 255);
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a8b, #ff6a00, #d3a46c, #fca13f, #ed5968);
+    color: white;
+    animation: gradientShift 10s ease infinite;
+    background-size: 600% 600%;
+    filter: blur(0.2px);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+    color: #130901;
+    text-align: center;
+    font-family: Algerian, cursive;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.small-box {
+    width: 900px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: #ff7f50; 
+    color: #1b1713; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-top: 65px;
+    border-radius: 30px;
+    margin-left: 160px;
+    transition: all 0.3s ease-in-out;
+}
+
+.small-box:hover {
+    background-color: #ff9966;
+    box-shadow: 0 6px 20px rgba(85, 107, 47, 0.5);
+    color: #fff0e6;
+}
+
+.button {
+    background-color: aliceblue;
+    border-radius: 8px;
+    font-family: Algerian;
+    font-size: 15px;
+}
+
+.button:hover {
+    background-color: darkgrey;
+    box-shadow: #150606;
+}
+
+.small-box h3 {
+    color: #150606;
+}
+
+.small-box h3:hover {
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 📱 RESPONSIVE FIXES */
+@media (max-width: 950px) {
+    .small-box {
+        width: 90%;       /* shrink width on small screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1 {
+        font-size: 1.8rem; /* adjust heading size for mobile */
+    }
+    .small-box {
+        font-size: 20px;   /* slightly smaller text for mobile */
+    }
+}

@@ -1,0 +1,147 @@
+.heading {
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: poppins;
+    color: rgb(0, 255, 255);
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(10, 7, 7);
+    color: white;
+    align-content: center;
+}
+
+h1 {
+    color: white;
+    text-shadow: 0 0 10px rgb(237, 155, 47),
+                 0 0 20px rgb(237, 155, 47),
+                 0 0 40px rgb(237, 155, 47);
+    text-align: center;
+    font-family: Algerian;
+}
+
+#second-heading {
+    color: rgb(223, 94, 24);
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card {
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #0e1017;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::after,
+.card::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #7a0606, #e20866);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 5s spin linear infinite;
+}
+
+.card::before {
+    filter: blur(35px);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+    margin-bottom: 1em;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-size: 120%;
+}
+
+.card-overlay {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+.card:hover .card-overlay {
+    text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 📱 Responsive Tweaks */
+@media (max-width: 768px) {
+    #second-heading {
+        font-size: 36px;
+    }
+    .card {
+        width: 260px;
+        padding: 1.5em;
+    }
+    .card-overlay {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    #second-heading {
+        font-size: 28px;
+    }
+    .card {
+        width: 90%;
+        padding: 1.2em;
+    }
+    .card-image {
+        border-radius: 30px;
+    }
+    .card-overlay {
+        font-size: 14px;
+    }
+}
