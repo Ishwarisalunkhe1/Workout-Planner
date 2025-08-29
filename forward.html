@@ -11,54 +11,43 @@
 
 <body>
 
-    <h1>❄️ Cool-Down Exercise</h1>
-
-    <button onclick="location.href='cool.html'" style="padding:10px 20px;" class="button">🔙 Back to Home</button>
+    <h1>Cool-Down Exercise</h1>
 
     <div class="card">
         <h2><b>Forward Bend</b></h2>
         <img class="card-image" src="forwardbend.jpg" alt="forward bend">
-        <button class="start-button"
-            onclick="showToast('Start now! Set your timer for 30 seconds.Start the timmer Down.Thank You😊') "
-            class="btn btn-danger m-3">▶
-            Start
-            Exercise </button>
+
+        <button class="start-button btn btn-danger m-3"
+            onclick="startExercise()">▶ Start Exercise</button>
+
         <h3><b><u>Steps:</u></b></h3>
         <ol style="text-align: left; font-size: 18px; line-height: 1.8; color: #444;">
             <li>Stand up tall with feet hip-width apart.</li>
-            <li>Inhale deeply, then exhale slowly as you bend forward from your hips.
-
-            </li>
-            <li>Let your arms hang down toward your toes (you can slightly bend your knees if needed).
-
-            </li>
-            <li>Keep your head and neck relaxed, hanging down naturally.
-
-            </li>
-            <li>Feel the stretch in your back, hamstrings, and calves.
-
-            </li>
+            <li>Inhale deeply, then exhale slowly as you bend forward from your hips.</li>
+            <li>Let your arms hang down toward your toes (you can slightly bend your knees if needed).</li>
+            <li>Keep your head and neck relaxed, hanging down naturally.</li>
+            <li>Feel the stretch in your back, hamstrings, and calves.</li>
         </ol>
-        <audio controls>
+
+        <audio id="exerciseAudio" controls hidden>
             <source src="30sec.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
+
         <h3><b><u>Benefits:</u></b></h3>
         <ul style="list-style-type: none; padding-left: 0;">
-            <li>⭐ Relieves tension in the spine and legs, improves flexibility, and calms the nervous system.</li>
-
+            <li>Relieves tension in the spine and legs, improves flexibility, and calms the nervous system.</li>
         </ul>
-        <button class="start-button" onclick="nextExercise()">▶ Next Exercise➡️ </button>
 
+        <button class="start-button btn btn-primary m-3" onclick="nextExercise()">▶ Next Exercise</button>
     </div>
 
+    <!-- Toast -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="myToast" class="toast align-items-center text-white bg-success border-0" role="alert"
             aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
-                <div class="toast-body">
-
-                </div>
+                <div class="toast-body"></div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
                     aria-label="Close"></button>
             </div>
@@ -74,18 +63,25 @@
             const toast = new bootstrap.Toast(toastElement);
             toast.show();
         }
-        function nextExercise() {
-            showToast("Well Done✅ Great Job! Now moving to the next exercise.In next 5 Seconds😊");
 
-            const audio = new Audio(".mp3");
+        function startExercise() {
+            // Play audio
+            const audio = document.getElementById("exerciseAudio");
+            audio.currentTime = 0; // restart if clicked again
             audio.play();
+
+            // Show toast
+            showToast("Start now! Set your timer for 30 seconds. Start the timer now. Thank You.");
+        }
+
+        function nextExercise() {
+            showToast("Well Done. Great Job! Now moving to the next exercise in 5 seconds.");
 
             setTimeout(function () {
                 window.location.href = "catcow.html";
             }, 5000);
         }
     </script>
-
 
 </body>
 
