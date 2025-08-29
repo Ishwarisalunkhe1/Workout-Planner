@@ -41,3 +41,55 @@ Everyone is welcome to contribute! Whether you are a beginner or an experienced 
 
 Before running the application, ensure the database is properly set up. Use the following SQL queries:
 
+CREATE DATABASE IF NOT EXISTS lso_db;
+USE lso_db;
+
+CREATE TABLE IF NOT EXISTS users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(150) NOT NULL UNIQUE,
+password VARCHAR(255) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- You need to have XAMPP or a similar local web server environment installed on your machine.
+- Ensure MySQL is running.
+
+### Installation Steps
+
+1. Clone the repository:
+git clone https://github.com/your-repo/workout-planner.git
+
+2. Move the project folder to your local server directory:
+C:/xampp/htdocs/project
+
+3. Import the database by running the SQL queries mentioned above using phpMyAdmin or MySQL CLI.
+
+4. Open your browser and navigate to:
+http://localhost/project/
+
+
+---
+
+## 🤝 Code of Conduct
+
+Please adhere to a respectful and collaborative environment. Positive and constructive feedback is encouraged.
+
+---
+
+Thank you for your interest in contributing to Workout-Planner! Let's build a healthier future together. 💪
+
+
+
+
+
+
+
+
