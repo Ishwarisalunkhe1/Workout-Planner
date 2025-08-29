@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monday - Full Body Starter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #00ffcc;
+        }
+
+        .exercise {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .exercise img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .exercise div {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        h2 {
+            color: #00ffcc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #00ffcc;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #000;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #00ccaa;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Monday – Full Body Starter</h1>
+    </header>
+
+    <!-- Exercise Template -->
+    <div class="exercise">
+        <img src="jumping.jpg" alt="Jumping Jacks">
+        <div>
+            <h2>Jumping Jacks</h2>
+            <p>Jump feet out and arms overhead, then back in, repeatedly.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="body.jpg" alt="Bodyweight Squats">
+        <div>
+            <h2>Bodyweight Squats</h2>
+            <p>Sit back like a chair, knees over toes, then stand tall.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="high.jpg" alt="High Knees">
+        <div>
+            <h2>High Knees</h2>
+            <p>Run in place, lifting knees to waist height quickly.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="wall.jpg" alt="Wall PushUps">
+        <div>
+            <h2>Wall PushUps</h2>
+            <p>Stand arm’s length from wall, bend elbows to bring chest close, then push back.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="glute.jpg" alt="Glute Bridges">
+        <div>
+            <h2>Glute Bridges</h2>
+            <p>Lie on back, lift hips up squeezing glutes, then lower.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="lunges.jpg" alt="Forward Lunges">
+        <div>
+            <h2>Forward Lunges</h2>
+            <p>Step forward, bend both knees to 90°, push back to start.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="plank.jpg" alt="Plank Hold">
+        <div>
+            <h2>Plank Hold</h2>
+            <p>Hold body straight on forearms and toes, core tight.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="exercise">
+        <img src="mountain.jpg" alt="Mountain Climbers">
+        <div>
+            <h2>Mountain Climbers</h2>
+            <p>From plank, drive knees toward chest alternately, fast.</p>
+        </div>
+        <button onclick="startExercise(this)">Start</button>
+        <audio>
+            <source src="40sec.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        let completedExercises = 0;
+        const totalExercises = document.querySelectorAll(".exercise").length;
+
+        function startExercise(button) {
+            const audio = button.nextElementSibling;
+            audio.play();
+            button.disabled = true;
+            audio.onended = () => {
+                completedExercises++;
+                if (completedExercises === totalExercises) {
+                    alert("Congratulations! You have completed all exercises!");
+                    window.location.href = "main.html"; // redirect to main page
+                }
+            };
+        }
+    </script>
+
+</body>
+</html>

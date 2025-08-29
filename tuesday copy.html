@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuesday – Core & Neck Posture</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #eee;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      background: #1f1f1f;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      background: #ff3b3b;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .exercise {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1f1f1f;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .exercise img {
+      width: 150px;
+      height: auto;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+
+    .exercise div {
+      flex: 1;
+      text-align: left;
+    }
+
+    .start-btn {
+      background: #ff3b3b;
+      border: none;
+      padding: 8px 16px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .start-btn:hover {
+      background: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Tuesday – Core & Neck Posture</h1>
+  <button onclick="location.href='mainwork.html'" class="button">Back</button>
+
+  <!-- Exercises -->
+  <div class="exercise">
+    <img src="plank.jpg" alt="Plank Hold">
+    <div>
+      <h2>Plank Hold</h2>
+      <p>Keep your body straight, elbows under shoulders, core tight.</p>
+      <button class="start-btn" onclick="playExercise(0)">Start</button>
+      <audio id="audio0" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="glutehold.jpg" alt="Glute Bridge Hold">
+    <div>
+      <h2>Glute Bridge Hold</h2>
+      <p>Lie on back, lift hips, squeeze glutes, hold.</p>
+      <button class="start-btn" onclick="playExercise(1)">Start</button>
+      <audio id="audio1" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="bird.jpg" alt="Bird Dog">
+    <div>
+      <h2>Bird Dog</h2>
+      <p>On all fours, extend opposite arm & leg, switch sides.</p>
+      <button class="start-btn" onclick="playExercise(2)">Start</button>
+      <audio id="audio2" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="side.jpg" alt="Side Plank">
+    <div>
+      <h2>Side Plank</h2>
+      <p>Lie on side, lift hips, body in a straight line.</p>
+      <button class="start-btn" onclick="playExercise(3)">Start</button>
+      <audio id="audio3" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="chin.jpg" alt="Chin Tucks">
+    <div>
+      <h2>Chin Tucks</h2>
+      <p>Gently pull chin straight back, hold, then release.</p>
+      <button class="start-btn" onclick="playExercise(4)">Start</button>
+      <audio id="audio4" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="blade.jpg" alt="Shoulder Blade Squeeze">
+    <div>
+      <h2>Shoulder Blade Squeeze</h2>
+      <p>Pull shoulder blades together, keep shoulders relaxed.</p>
+      <button class="start-btn" onclick="playExercise(5)">Start</button>
+      <audio id="audio5" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="jumping.jpg" alt="Jumping Jacks">
+    <div>
+      <h2>Jumping Jacks</h2>
+      <p>Jump feet out and arms overhead, then back in, repeatedly.</p>
+      <button class="start-btn" onclick="playExercise(6)">Start</button>
+      <audio id="audio6" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <img src="superman.jpg" alt="Superman Hold">
+    <div>
+      <h2>Superman Hold</h2>
+      <p>Lie on belly, lift arms, chest, and legs, hold.</p>
+      <button class="start-btn" onclick="playExercise(7)">Start</button>
+      <audio id="audio7" src="40sec.mp3"></audio>
+    </div>
+  </div>
+
+  <script>
+    let completed = 0;
+    const totalExercises = 8;
+
+    function playExercise(i) {
+      const audio = document.getElementById("audio" + i);
+      audio.play();
+
+      audio.onended = function () {
+        completed++;
+        if (completed === totalExercises) {
+          alert("Congratulations! You have completed all exercises.");
+          window.location.href = "mainwork.html";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

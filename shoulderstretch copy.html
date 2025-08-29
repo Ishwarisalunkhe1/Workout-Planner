@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shoulder Stretch</title>
+    <link rel="stylesheet" href="style5.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Cool-Down Exercise</h1>
+
+    
+    <div class="card">
+        <h2><b>Shoulder Stretch</b></h2>
+        <img class="card-image" src="shoulder.jpg" alt="Shoulder Stretch">
+
+        <button class="start-button"
+            onclick="startExercise()"
+            class="btn btn-danger m-3">Start Exercise</button>
+
+        <h3><b><u>Steps:</u></b></h3>
+        <ol style="text-align: left; font-size: 18px; line-height: 1.8; color: #444;">
+            <li>Stand or sit comfortably.</li>
+            <li>Bring your right arm across your chest.</li>
+            <li>Use your left hand to gently press your right arm closer to your body.</li>
+            <li>Keep the stretched arm straight, not bent.</li>
+            <li>Repeat on the other side.</li>
+            <li>30 seconds on right arm, then 30 seconds on left arm. <b>Total: 1 minute</b></li>
+        </ol>
+
+        <audio id="exerciseAudio">
+            <source src="1min.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3><b><u>Benefits:</u></b></h3>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>Relieves shoulder tightness, improves range of motion, and relaxes the upper body.</li>
+        </ul>
+
+        <button class="start-button" onclick="nextExercise()">Finish Exercise</button>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="myToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showToast(message) {
+            const toastElement = document.getElementById('myToast');
+            toastElement.querySelector('.toast-body').textContent = message;
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        }
+
+        function startExercise() {
+            // Play audio when start button is clicked
+            const audio = document.getElementById("exerciseAudio");
+            audio.play();
+            showToast("Exercise started! Follow the steps for 1 minute.");
+        }
+
+        function nextExercise() {
+            alert("Congratulations! You have completed the exercise.");
+            setTimeout(function () {
+                window.location.href = "cool.html";
+            }, 2000);
+        }
+    </script>
+
+</body>
+
+</html>
