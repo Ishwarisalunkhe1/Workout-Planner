@@ -2,94 +2,203 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MainWorkOut</title>
-    <link rel="stylesheet" href="style6.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Workout Roadmap</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(270deg, #111, #222, #333, #111);
+      background-size: 600% 600%;
+      animation: gradientBG 20s ease infinite;
+      color: #f1f1f1;
+      padding: 30px 15px;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      width: 90%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      letter-spacing: 1px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .button {
+      background: #ff3b3b;
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      margin-bottom: 25px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .button:hover {
+      background: #e62e2e;
+      transform: scale(1.05);
+    }
+
+    .roadmap {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 30px;
+      border-left: 3px solid #ff3b3b;
+    }
+
+    .step {
+      margin: 30px 0;
+      position: relative;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateX(10px);
+      background: rgba(255, 59, 59, 0.15);
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: 20px;
+      width: 18px;
+      height: 18px;
+      background: #ff3b3b;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 59, 59, 0.8);
+    }
+
+    .step a {
+      text-decoration: none;
+      color: #fff;
+      display: block;
+    }
+
+    .step h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ff4d4d;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 
 <body>
-    <h1><u>Main-WorkOut</u>⚡</h1>
-    <button onclick="location.href='exercise.html'" style="padding:10px 20px;" class="button">🔙 Back to Home</button>
-    <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="monday.html">
-                    <h3>🟩 Monday – Full Body Starter</h3>
-                </a>
-            </li>
-        </ul>
+  <h1>Main Workout Roadmap</h1>
+  <button id="startBtn" class="button">Start Workout</button>
 
+  <div class="roadmap">
+    <div class="step">
+      <a href="monday.html">
+        <h3>Monday – Full Body Starter</h3>
+        <p>Begin the week with a complete body warm-up and foundational exercises.</p>
+      </a>
     </div>
 
-    </div>
-    <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="tuesday.html">
-                    <h3>🟨 Tuesday – Core & Neck Posture</h3>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-    <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="wednesday.html">
-                    <h3>🟧 Wednesday – Leg, Balance & Neck</h3>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-    <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="thursday.html">
-                    <h3>🟦 Thursday – Upper Body Strength & Neck Alignment</h3>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-     <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="friday.html">
-                    <h3>🟨 Friday – Cardio & Core with Neck Stretch</h3>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-     <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="saturday.html">
-                    <h3>🟩 Saturday – Active Recovery Strength</h3>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-     <div class="small-box">
-        <ul type="dot">
-            <li>
-                <a href="sunday.html">
-                    <h3>💤🍵Sunday – Rest & Recovery</h3>
-                </a>
-            </li>
-
-        </ul>
-
+    <div class="step">
+      <a href="tuesday.html">
+        <h3>Tuesday – Core & Neck Posture</h3>
+        <p>Focus on abdominal strength and improving neck alignment.</p>
+      </a>
     </div>
 
+    <div class="step">
+      <a href="wednesday.html">
+        <h3>Wednesday – Leg, Balance & Neck</h3>
+        <p>Enhance lower body strength and stability with posture correction.</p>
+      </a>
+    </div>
+
+    <div class="step">
+      <a href="thursday.html">
+        <h3>Thursday – Upper Body Strength & Neck Alignment</h3>
+        <p>Build upper body endurance while maintaining proper posture.</p>
+      </a>
+    </div>
+
+    <div class="step">
+      <a href="friday.html">
+        <h3>Friday – Cardio & Core with Neck Stretch</h3>
+        <p>Boost stamina with cardio and finish with essential stretches.</p>
+      </a>
+    </div>
+
+    <div class="step">
+      <a href="saturday.html">
+        <h3>Saturday – Active Recovery Strength</h3>
+        <p>Low-intensity strength training to recover and maintain mobility.</p>
+      </a>
+    </div>
+
+    <div class="step">
+      <a href="sunday.html">
+        <h3>Sunday – Rest & Recovery</h3>
+        <p>A day dedicated to full recovery and relaxation.</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("startBtn").addEventListener("click", function () {
+      const day = new Date().getDay(); // 0=Sunday, 1=Monday, ..., 6=Saturday
+      let page = "sunday.html"; // default
+
+      switch (day) {
+        case 1: page = "monday.html"; break;
+        case 2: page = "tuesday.html"; break;
+        case 3: page = "wednesday.html"; break;
+        case 4: page = "thursday.html"; break;
+        case 5: page = "friday.html"; break;
+        case 6: page = "saturday.html"; break;
+        case 0: page = "sunday.html"; break;
+      }
+
+      window.location.href = page;
+    });
+  </script>
 </body>
 
 </html>
